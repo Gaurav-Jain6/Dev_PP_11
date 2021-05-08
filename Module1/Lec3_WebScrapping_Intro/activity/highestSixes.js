@@ -9,7 +9,7 @@ request(matchLink , cb) ;
 function cb(error , response , data)
 {
     getHighestSixes(data) ;
-}
+}   
 
 function getHighestSixes(data)
 {
