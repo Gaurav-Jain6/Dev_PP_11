@@ -5,7 +5,7 @@ const fs = require("fs") ;
 // let matchLink = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/delhi-capitals-vs-mumbai-indians-final-1237181/full-scorecard" ;
 
 function getMatchDetails(matchLink)
-{
+{   
     request(matchLink , function(err , res , data)
     {
         allBatsmanInfo(data) ;
@@ -13,8 +13,8 @@ function getMatchDetails(matchLink)
 }
 
 function allBatsmanInfo(html)
-{
-    let myDocument = cheerio.load(html) ;
+{  
+    let myDocument = cheerio.load(html + "");
 
     let bothInnings = myDocument(".card.content-block.match-scorecard-table .Collapsible");
     for(let i = 0 ; i < bothInnings.length ; i++)
@@ -42,7 +42,7 @@ function allBatsmanInfo(html)
                 processDetails(teamName , Name , runs , balls , fours , sixes , strikeRate) ;
             }
         }
-        console.log("=========================================") ;
+        // console.log("=========================================") ;
     }
 }
 
@@ -119,7 +119,7 @@ function processDetails(teamName , Name , runs , balls , fours , sixes , strikeR
     }
 }
 
+
+
+
 module.exports = getMatchDetails;
-
-
-
