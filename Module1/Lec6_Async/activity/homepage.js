@@ -5,7 +5,7 @@ const cheerio = require("cheerio") ;
 const getAllMatches = require("./allMatches") ;
 
 request(matchLink , function(err , resp , data)
-{
+{   
     processData(data) ;
 })
 
