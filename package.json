@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Gaurav-Jain6/Dev_PP_11#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.6",
+    "prompt-sync": "^4.2.0",
     "puppeteer": "^9.1.1",
     "request": "^2.88.2",
     "robot": "^0.3.0"
