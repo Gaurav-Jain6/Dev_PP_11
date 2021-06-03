@@ -2,7 +2,8 @@ const fs = require("fs") ;
 const cheerio = require("cheerio") ;
 const request = require("request") ;
 // const movieN = require("./moviedownloader");
-const movieN = require("./movieMainFile.js")
+const movieN = require("./movieMainFile.js");
+const seriesName = require("./ytsSeries.js");
 
 // let imdbLink = "https://www.imdb.com/title/tt2582846/?ref_=nv_sr_srsg_0" ;
 // let imdbLink = "https://www.imdb.com/title/tt4154756/?ref_=nv_sr_srsg_0" ;
@@ -13,8 +14,9 @@ const movieN = require("./movieMainFile.js")
 // let imdbLink = "https://www.imdb.com/title/tt4425200/?ref_=fn_al_tt_1" ;
 // let imdbLink = href ;
 
-
-function sendLink(imdbLink){
+let SNname ;
+function sendLink(imdbLink , mvName){
+    SNname = mvName ;
     request(imdbLink , function(err , resp , data)
     {
         processData(data) ; 
@@ -42,18 +44,19 @@ function processData(html)
             // let mo = movieOrSeries[i] ;
             // console.log(mo.text()) ;
             console.log(movieOrSeries[i]) ; // tells if it is a movie or a series
-            if(movieOrSeries[i].includes("TV Series")) ;
+            if(movieOrSeries[i].includes("TV Series")) 
             {
-                // console.log("gaurav") ;
+                let seiresN = SNname + " TV" ;
+                seriesName(seiresN) ;
+            }
+            else{
+                movieN(titleText) ;
             }
         }
     }
 
 
     // console.log(titleText) ;
-    movieN(titleText) ;
-
-
     // processDetails(titleText , ratingText , movieOrSeries) ;
 
 }

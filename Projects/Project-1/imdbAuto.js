@@ -28,11 +28,11 @@ let href ;
     let oneATag = allATag ;
     href = await tab.evaluate(function(elem){return elem.getAttribute("href")} , oneATag) ;
     href = "https://www.imdb.com" + href ;
-    // console.log(href) ;
+    console.log(href) ;
     await tab.goto(href) ;
     await browser.close() ;
     await tab.waitForTimeout(3000) ;
-    await sendLink(href) ;    
+    await sendLink(href , mvName) ;    
 
 
 
