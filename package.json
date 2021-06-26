@@ -20,7 +20,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.6",
     "cron": "^1.8.2",
-    "nodemailer": "^6.6.1",
+    "nodemailer": "^6.6.2",
     "prompt-sync": "^4.2.0",
     "puppeteer": "^9.1.1",
     "request": "^2.88.2",
